@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators  } from '@angular/forms';
 
 @Component({
   selector: 'app-add-details',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDetailsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private formBuilder: FormBuilder) { }
+  profileForm;
   ngOnInit() {
+    this.createForm();
+  }
+
+  createForm() {
+    this.profileForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      salary: ['', Validators.required ],
+      age: ['', Validators.required]
+    });
   }
 
 }

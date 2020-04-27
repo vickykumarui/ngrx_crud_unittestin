@@ -30,4 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 To build crud application on angular ngrx and unit test on it
 
 
-
+## Using below url for dummy api
+http://dummy.restapiexample.com/ 

@@ -1,3 +1,25 @@
-<p>
-  add-details works!
-</p>
+
+<div class="maindiv">
+  <form [formGroup]="profileForm">
+
+    <div class="form-group">
+      <label class="myLabel" for="empName">Please enter name</label>
+      <input class="myInput" type="text" name="empName" id="empName" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label class="myLabel" for="empSal">Please enter salary</label>
+      <input class="myInput" type="text" name="empSal" id="" formControlName="salary">
+    </div>
+
+    <div class="form-group">
+      <label class="myLabel" for="empAge">Please enter age</label>
+      <input class="myInput" type="text" name="empAge" id="" formControlName="age">
+    </div>
+
+    <div class="form-group">
+      <button class="submit-btn" type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </div>
+
+  </form>
+</div>
