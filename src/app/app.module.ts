@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ParentModule} from './crudFeature/parent/parent/parent.module';
+// import { FooterModule } from './footer/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ParentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
