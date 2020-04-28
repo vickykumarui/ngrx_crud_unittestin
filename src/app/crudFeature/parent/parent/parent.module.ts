@@ -6,8 +6,9 @@ import { HeaderModule } from '../../../header/header/index';
 import { AddDetailsComponent } from './add-details/add-details.component';
 import { AddMoreDetailsComponent } from './add-more-details/add-more-details.component';
 import { ReviewDetailsComponent } from './review-details/review-details.component';
-
+import { StoreModule } from '@ngrx/store';
 import { ReactiveFormsModule } from '@angular/forms';
+import { reducer } from '../../state/crud.reducers';
 
 @NgModule({
   declarations: [ParentComponent, AddDetailsComponent, AddMoreDetailsComponent, ReviewDetailsComponent],
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FooterModule,
     HeaderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forFeature('employee', reducer)
   ]
 })
 export class ParentModule { }

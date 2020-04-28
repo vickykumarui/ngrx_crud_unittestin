@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentModule} from './crudFeature/parent/parent/parent.module';
-
+import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +11,8 @@ import { ParentModule} from './crudFeature/parent/parent/parent.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ParentModule
+    ParentModule,
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
