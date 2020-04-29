@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators  } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
+import { State } from '../../../../../app/state/app.state';
 
 @Component({
   selector: 'app-add-details',
@@ -9,7 +10,7 @@ import { Store, select } from '@ngrx/store';
 })
 export class AddDetailsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private store: Store<any>) { }
+  constructor(private formBuilder: FormBuilder, private store: Store<State>) { }
   profileForm;
   employee;
   ngOnInit() {
@@ -17,7 +18,7 @@ export class AddDetailsComponent implements OnInit {
 
     this.store.pipe(select('employee')).subscribe((employee) => {
       if (employee) {
-        this.employee = employee.updateDetails;
+        this.employee = employee.employeeDetails;
       }
   });
   }
@@ -41,6 +42,11 @@ export class AddDetailsComponent implements OnInit {
     this.store.dispatch({
       type: 'UPDATE DETAILS',
       payload: adddetailsdata
+    });
+
+    this.store.dispatch({
+      type: 'UPDATE PAGE',
+      payload: 'MOREDETAILS'
     });
   }
 

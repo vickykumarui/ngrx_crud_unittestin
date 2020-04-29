@@ -1,10 +1,17 @@
-export function reducer(state, action) {
+import { EmployeeState, initialState } from './crud.selector';
+
+
+export function reducer(state: EmployeeState = initialState, action) {
     switch (action.type) {
         case 'UPDATE DETAILS':
         return {
             ...state,
-            updateDetails: action.payload
+            employeeDetails: action.payload
         };
-        break;
+        case 'UPDATE PAGE':
+            return {
+                ...state,
+                currentpage: action.payload
+            };
     }
 }

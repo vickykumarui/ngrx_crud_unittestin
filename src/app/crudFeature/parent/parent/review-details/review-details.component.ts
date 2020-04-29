@@ -10,6 +10,7 @@ export class ReviewDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
