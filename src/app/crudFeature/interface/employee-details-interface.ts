@@ -9,3 +9,8 @@ export enum CurrenPage {
     MOREDETAILSPAGE = 'MOREDETAILS',
     REVIEWPAGE = 'REVIEW'
 }
+
+export interface MoreEmployeeDetails {
+  previousCompane: string | null;
+  expectedSalary: string | null;
+}

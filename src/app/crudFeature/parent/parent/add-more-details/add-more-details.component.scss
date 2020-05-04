@@ -1,0 +1,31 @@
+.maindiv{
+    padding: 20px;
+
+    .form-group{
+        padding: 15px;
+        .myLabel{
+            display: block;
+        }
+        
+        .myInput{
+            height: 30px;
+            width: 250px;
+        }
+    }
+
+    .submit-btn{
+        width: 100px;
+    height: 30px;
+    background: green;
+    border: none;
+    color: white;
+    border-radius: 5%;
+    
+    }
+
+    button:disabled,
+    button[disabled]{
+   opacity: 0.5;
+    }
+  
+}

@@ -13,7 +13,7 @@ export class ParentComponent implements OnInit {
   constructor(private store: Store<State>) { }
 
   ngOnInit() {
-    
+
     this.store.pipe(select('employee')).subscribe((showdetails) => {
       if (showdetails) {
         this.showdetails = showdetails.currentpage;

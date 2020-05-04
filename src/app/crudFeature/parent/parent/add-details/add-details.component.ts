@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators  } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../../../app/state/app.state';
+import { initialState } from '../../../state/crud.reducers';
 
 @Component({
   selector: 'app-add-details',
@@ -12,22 +13,24 @@ export class AddDetailsComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private store: Store<State>) { }
   profileForm;
-  employee;
-  ngOnInit() {
-    this.createForm();
 
+  ngOnInit() {
     this.store.pipe(select('employee')).subscribe((employee) => {
       if (employee) {
-        this.employee = employee.employeeDetails;
+        this.createForm(employee.employeeDetails);
+      } else {
+        this.createForm(initialState);
       }
+
+
   });
   }
 
-  createForm() {
+  createForm(employee) {
     this.profileForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      salary: ['', Validators.required ],
-      age: ['', Validators.required]
+      name: [employee.name, Validators.required],
+      salary: [employee.salary, Validators.required ],
+      age: [employee.age, Validators.required]
     });
   }
 

@@ -1,3 +1,24 @@
-<p>
-  add-more-details works!
-</p>
+
+
+<div class="maindiv">
+  <form [formGroup]="profileMoreInfoForm">
+
+    <div class="form-group">
+      <label class="myLabel" for="empName">Please enter previous company name</label>
+      <input class="myInput" type="text" name="empName" id="prevCompanyName" formControlName="prevCompanyName">
+    </div>
+
+    <div class="form-group">
+      <label class="myLabel" for="empSal">Please enter expected salary</label>
+      <input class="myInput" type="text" name="empSal" id="" formControlName="expectedsalary">
+    </div>
+
+    <div class="form-group">
+      <button class="submit-btn" type="submit"  (click) = "previous()">Previous</button>
+    </div>
+    <div class="form-group">
+      <button class="submit-btn" type="submit" [disabled]="!profileMoreInfoForm.valid" (click) = "submitForm()">Submit</button>
+    </div>
+
+  </form>
+</div>
